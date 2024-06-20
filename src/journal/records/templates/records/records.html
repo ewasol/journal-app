@@ -1,0 +1,12 @@
+{% for record in records %}
+    <article>
+        <h2 class="{{ record.created_at|date:'l' }}">
+            {{ record.created_at|date:'Y-m-d H:i' }}
+        </h2>
+        <h3>
+            <a href="{% url 'record-details' record.id %}">
+                {{ record.title }}
+            </a>
+        </h3>
+    </article>
+{% endfor %}
